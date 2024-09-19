@@ -36,8 +36,22 @@ ALTER TABLE pizzas
 	ALTER COLUMN pizza_type_id TYPE "varchar",	
 	ALTER COLUMN size TYPE "varchar";
 	
+SELECT 
+	*
+FROM  
+	pizzas;
 	
-	
+SELECT 
+	*
+FROM 
+	order_details;
 
+SELECT 
+	*
+FROM  
+	orders;
 
-
+SELECT 
+	*
+FROM  
+	pizza_types;
