@@ -116,24 +116,13 @@ ORDER BY
 -- product profitability
 
 SELECT 
-	DISTINCT p.product_name,
-	p.product_price,
-	AVG(DIV(o.order_cost, o.order_quantity))
-FROM 
-	orders o
-INNER JOIN product p
-ON
-	o.product_id = p.product_id
+	product_name,
+	AVG("value") average_product_value,
+	AVG(order_cost) average_cost_of_product,
+	AVG("value") - AVG(order_cost) axerage_profit
+FROM
+	orders 
 GROUP BY
-	p.product_name,
-	p.product_price	;
-
-
-
-
-
-
-
-
-
-	
+	product_name
+ORDER BY
+	axerage_profit DESC;
